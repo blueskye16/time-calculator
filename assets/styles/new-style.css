@@ -1,0 +1,7 @@
+.bg-stars {
+  background: url("/assets/images/forest-stars.jpg"), rgba(0, 0, 0.5, 0.5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 85%;
+}
