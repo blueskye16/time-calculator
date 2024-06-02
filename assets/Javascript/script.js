@@ -20,7 +20,19 @@ function storeTimeAndCalculate() {
   currentDate.setHours(currentDate.getHours() + hoursToAdd);
   currentDate.setMinutes(currentDate.getMinutes() + minutesToAdd);
 
-  resultText.textContent = currentDate.toLocaleString();
+  // Format the date and time in Indonesian locale
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZone: 'Asia/Jakarta' // Set Indonesian time zone
+  };
+  const formattedDate = currentDate.toLocaleDateString('id-ID', options);
+
+  resultText.textContent = formattedDate;
 }
 
 function resetInputs() {
