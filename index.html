@@ -40,10 +40,12 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
+            </ul>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
+            </ul>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -56,9 +58,7 @@
         </div>
       </nav>
     </header>
-    <main
-      class="container-md bg-primary position-absolute top-50 start-50 translate-middle"
-    >
+    <main class="container-md bg-primary mt-5">
       <div class="pb-5">
         <h1>
           Time Calculator: Your Personalized
@@ -71,6 +71,65 @@
           <i class="fa-regular fa-star pe-2" style="color: #ffd43b"></i>Time
           Calculator
         </h2>
+        <div id="insideTimeContainer">
+          <div id="timeContainer">
+            <div id="timeDisplay">
+              <p>SET TIME</p>
+              <input
+                type="number"
+                id="startHourInput"
+                placeholder="00"
+                maxlength="2"
+                oninput="this.value = this.value.slice(0, 2)"
+              />
+              <input
+                type="number"
+                id="startMinuteInput"
+                placeholder="00"
+                maxlength="2"
+                oninput="this.value = this.value.slice(0, 2)"
+              />
+            </div>
+            <div id="timeInputContainer">
+              <div id="hourContainer" class="time-input-el">
+                <p>Hour</p>
+                <input
+                  type="number"
+                  id="hourInput"
+                  placeholder="00"
+                  maxlength="2"
+                />
+              </div>
+              <div id="minuteContainer" class="time-input-el">
+                <p>Minute</p>
+                <input
+                  type="number"
+                  id="minuteInput"
+                  placeholder="00"
+                  maxlength="2"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="btn-container">
+            <button
+              class="btn"
+              onclick="storeTimeAndCalculate()"
+              id="calculateBtn"
+            >
+              CALCULATE
+            </button>
+            <button class="btn" id="resetBtn">RESET</button>
+          </div>
+          <div id="resultContainer">
+            <p>Set Date (optional)</p>
+            <input type="date" id="dateInput" />
+            <p>RESULT</p>
+            <h1 id="timeCalculationResult">00:00</h1>
+            <p id="dateResult" style="display: none">dd/mm/yyyy</p>
+            <p id="exceedDay" style="display: none">Exceeding day time</p>
+          </div>
+        </div>
       </section>
     </main>
     <script
